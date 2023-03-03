@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../features/stuck/presentation/stucks_view.dart';
+import 'components/appbar.dart';
+import 'components/balance_info_card.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -14,9 +18,15 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Home Page"),
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: const [
+            UIAppBar(),
+            BalanceInfoCard(),
+            Stucks(),
+          ],
+        ),
       ),
     );
   }
